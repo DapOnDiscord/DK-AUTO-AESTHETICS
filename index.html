@@ -3,315 +3,160 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>DevKev Auto Aesthetics</title>
+<title>DevKev Auto Aesthetics | Cherry Hill, NJ</title>
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial, sans-serif;
-}
-body{
-  background: radial-gradient(circle at top, #151515, #070707 60%);
-  color:#d6d6d6;
-  scroll-behavior:smooth;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Hero with single car detailing photo */
+body {
+  background: #0a0a0a;
+  color: #d6d6d6;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* Header with Logo */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #444;
+  z-index: 1000;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  height: 62px;        /* Nice size for your logo */
+  width: auto;
+  filter: brightness(1.05);
+}
+
+nav a {
+  color: #bbbbbb;
+  margin-left: 28px;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #e0e0e0;
+}
+
+/* Hero */
 .hero {
-  position: relative;
-  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)), 
+              url('https://i.imgur.com/0z9vK8P.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  overflow: hidden;
+  padding: 0 20px;
 }
 
-.hero::before {
-  content: '';
+.hero h1 {
+  font-size: 3.8rem;
+  color: #e0e0e0;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+}
+
+.hero .tagline {
+  font-size: 1.15rem;
+  color: #aaaaaa;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  max-width: 720px;
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 35px;
+}
+
+.btn {
+  padding: 15px 36px;
+  background: linear-gradient(135deg, #c0c0c0, #8a8a8a);
+  color: #111;
+  border: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(192,192,192,0.35);
+}
+
+/* Sections */
+section {
+  padding: 110px 40px 90px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #e0e0e0;
+  margin-bottom: 60px;
+  letter-spacing: 2px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+.card {
+  background: linear-gradient(145deg, #1a1a1a, #111111);
+  border: 1px solid #555;
+  border-radius: 16px;
+  padding: 30px;
+  transition: 0.4s;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: #999;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+}
+
+.card h3 {
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  margin-bottom: 14px;
+}
+
+.card .price {
+  color: #c0c0c0;
+  font-size: 1.35rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.best {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
-    url('https://i.imgur.com/0z9vK8P.jpg'); 
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: -1;
-}
-
-/* Starry background for Services section */
-#services {
-  position: relative;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.025) 0%, transparent 40%),
-    #0a0a0a;
-  overflow: hidden;
-}
-
-#services::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    radial-gradient(white, rgba(255,255,255,0.8) 1px, transparent 1px),
-    radial-gradient(white, rgba(255,255,255,0.6) 1px, transparent 1px);
-  background-position: 0 0, 25px 25px;
-  background-size: 50px 50px;
-  opacity: 0.15;
-  pointer-events: none;
-  z-index: -1;
-}
-
-header{
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  background:rgba(10,10,10,0.85);
-  backdrop-filter:blur(14px);
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 40px;
-  border-bottom:1px solid rgba(192,192,192,0.15);
-  z-index:1000;
-}
-
-/* Logo styling */
-.header-logo {
-  height: 55px;
-  width: auto;
-  filter: brightness(1.1);
-}
-
-nav a{
-  color:#bdbdbd;
-  margin-left:18px;
-  text-decoration:none;
-  transition:0.3s;
-  font-size:14px;
-}
-nav a:hover{
-  color:silver;
-}
-section{
-  min-height:100vh;
-  padding:120px 40px 60px;
-}
-.hero h2{
-  font-size:3.2rem;
-  color:silver;
-  letter-spacing:2px;
-  z-index: 2;
-  position: relative;
-}
-.hero .tagline{
-  margin-top:10px;
-  font-size:1rem;
-  letter-spacing:4px;
-  color:#aaa;
-  text-transform:uppercase;
-  z-index: 2;
-  position: relative;
-}
-.hero p{
-  margin-top:15px;
-  max-width:650px;
-  color:#b0b0b0;
-  line-height:1.6;
-  z-index: 2;
-  position: relative;
-}
-.btn{
-  margin-top:25px;
-  padding:12px 26px;
-  background:linear-gradient(135deg, silver, #8c8c8c);
-  color:#000;
-  border:none;
-  cursor:pointer;
-  font-weight:bold;
-  border-radius:8px;
-  transition:0.3s;
-  box-shadow:0 0 15px rgba(192,192,192,0.15);
-  z-index: 2;
-  position: relative;
-}
-.btn:hover{
-  transform:translateY(-2px);
-  box-shadow:0 0 25px rgba(192,192,192,0.25);
-}
-.section-title{
-  text-align:center;
-  color:silver;
-  font-size:2rem;
-  margin-bottom:40px;
-  letter-spacing:2px;
-}
-.services{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:22px;
-}
-.card{
-  background:linear-gradient(145deg,#111,#0a0a0a);
-  border:1px solid rgba(192,192,192,0.15);
-  padding:22px;
-  border-radius:14px;
-  position:relative;
-  transition:0.3s;
-}
-.card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(192,192,192,0.35);
-}
-.card h3{
-  color:silver;
-  margin-bottom:10px;
-  letter-spacing:1px;
-}
-.card p{
-  color:#b5b5b5;
-  font-size:14px;
-  line-height:1.6;
-}
-.price{
-  margin-top:10px;
-  color:#ddd;
-  font-weight:bold;
-}
-.best-seller{
-  position:absolute;
-  top:12px;
-  right:12px;
-  background:linear-gradient(135deg,silver,#8c8c8c);
-  color:#000;
-  padding:5px 10px;
-  font-size:11px;
-  font-weight:bold;
-  border-radius:6px;
-}
-.booking, .contact{
-  max-width:650px;
-  margin:auto;
-  background:linear-gradient(145deg,#101010,#0a0a0a);
-  padding:30px;
-  border-radius:14px;
-  border:1px solid rgba(192,192,192,0.15);
-}
-input, textarea{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  margin-bottom:15px;
-  background:#050505;
-  border:1px solid rgba(192,192,192,0.15);
-  color:#fff;
-  border-radius:8px;
-  outline:none;
-}
-input:focus, textarea:focus{
-  border-color:silver;
-}
-footer{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid rgba(192,192,192,0.15);
-  color:#777;
-}
-</style>
-</head>
-<body>
-<header>
-  <img src="https://i.imgur.com/A796f.png" alt="DevKev Auto Aesthetics" class="header-logo">
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#services">Services</a>
-    <a href="#booking">Book</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section id="home" class="hero">
-  <h2>Premium Auto Detailing</h2>
-  <div class="tagline">Two Names One Standard</div>
-  <p>
-    Luxury detailing crafted for perfection. Every vehicle is treated with precision, passion, and a high-end finish that stands out on every road.
-  </p>
-  <button class="btn" onclick="document.getElementById('booking').scrollIntoView()">Book Appointment</button>
-</section>
-
-<section id="services">
-  <div class="section-title">Bundles & Services</div>
-  <div class="services">
-    <div class="card">
-      <div class="best-seller">BEST SELLER</div>
-      <h3>Signature Full Detail Bundle</h3>
-      <p>
-        The ultimate restoration package. Includes deep interior shampoo, exterior foam wash, wax sealant, rim cleaning, tire shine, and full surface protection for a showroom finish.
-      </p>
-      <div class="price">$120</div>
-    </div>
-    <div class="card">
-      <h3>Exterior Shine Package</h3>
-      <p>
-        A complete exterior enhancement including foam hand wash, clay bar treatment, wax coating, and tire dressing. Designed to restore gloss and protect paint long-term.
-      </p>
-      <div class="price">$60</div>
-    </div>
-    <div class="card">
-      <h3>Interior Refresh Detail</h3>
-      <p>
-        Deep interior cleaning with vacuum extraction, steam sanitization, stain removal, and odor elimination to restore a clean and fresh cabin environment.
-      </p>
-      <div class="price">$70</div>
-    </div>
-    <div class="card">
-      <h3>Quick Maintenance Wash</h3>
-      <p>
-        Ideal for upkeep between details. Includes exterior wash, light interior wipe-down, and tire shine to keep your vehicle consistently clean and presentable.
-      </p>
-      <div class="price">$35</div>
-    </div>
-  </div>
-</section>
-
-<section id="booking" class="booking">
-  <div class="section-title">Book Your Appointment</div>
-  <form onsubmit="sendBooking(event)">
-    <input type="text" placeholder="Full Name" required />
-    <input type="text" placeholder="Car Year / Make / Model" required />
-    <input type="date" required />
-    <textarea placeholder="Additional Notes (condition, requests, etc.)"></textarea>
-    <button class="btn" type="submit">Confirm Booking</button>
-  </form>
-</section>
-
-<section id="contact" class="contact">
-  <div class="section-title">Contact</div>
-  <p>Email: garnesgevin1738@gmail.com</p>
-  <p>Phone: 856-883-2195</p>
-</section>
-
-<footer>
-  <p>© 2026 DevKev Auto Aesthetics. All rights reserved.</p>
-</footer>
-
-<script>
-function sendBooking(e){
-  e.preventDefault();
-  alert("Booking received. We'll contact you shortly.");
-}
-</script>
-</body>
-</html>
+  top: 18px;
+  right: 18px;
+  background: linear-gradient(135deg, #c0c0c0, #777);
+  color: #111;
+  padding: 6px
